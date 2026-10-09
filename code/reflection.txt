@@ -1,6 +1,1 @@
-Write your reflection here.
-
-See reflection.md for what makes a good reflection — be specific, use the
-terminology from this assignment (lineage, grain, element function, Series.apply,
-row apply / axis=1, left merge, NaN, coerce, copy-add-return, boolean index,
-export), and make it actionable.
+I learned data lineage through the copy-add-return pattern: every step copies the frame and adds a new column (like hours_worked beside the raw hours) so the original values stay visible. My hardest bugs were writing `'h' is not text` instead of `'h' not in text` (identity vs. membership), which sent "42h" to 0.0, and copying a guard into calc_gross_pay that let NaN through because NaN is a float. I also learned that Series.apply passes one value while DataFrame.apply with axis=1 passes a whole row, and that a left merge keeps unmatched IDs like E099 as NaN instead of silently dropping them like the default inner merge. Next, I'll rebuild build_payroll and the Streamlit page on my own to practice chaining steps and boolean indexing, since I needed help finishing those parts.
